@@ -23,3 +23,4 @@ export type BAnnerType = {
   isActive: boolean;
   createdAt: string;
 };
+

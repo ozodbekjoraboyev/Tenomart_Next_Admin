@@ -9,6 +9,7 @@ import UserIcon from "../../public/user-stroke-rounded (5)";
 import FavouriteIcon from "../../public/favourite-stroke-rounded (1)";
 import ShoppingCart01Icon from "../../public/shopping-cart-01-stroke-rounded (2)";
 import FloatingLabelInput from "./Input";
+import AnimatedButton from "./Logo";
 
 function NavCenenter() {
   const [katalog, setKatalog] = useState(false);
@@ -18,12 +19,15 @@ function NavCenenter() {
       <div className=" flex items-center gap-12 ">
         <Link href={"/"}>
           {" "}
-          <Image
+          {/* <Image
             width={220}
             height={220}
             src={"https://texnomart.uz/_nuxt/img/texnomart-logo.3b2791c.svg"}
             alt="Tehnomart Logo"
-          />
+          /> */}
+           <div>
+      <AnimatedButton text="Logo" />
+    </div>
         </Link>
         <div
           onClick={() => {

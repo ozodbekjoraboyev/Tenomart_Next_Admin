@@ -9,11 +9,14 @@ function Cards() {
   const [products, setProducts] = useState<CardsDataType[]>();
 
   useEffect(() => {
-    axios.get("https://nt.softly.uz/api/front/products?page=1&limit=10")
+    axios
+      .get("https://nt.softly.uz/api/front/products?page=1&limit=10")
       .then((res) => {
         setProducts(res.data.items);
       })
-      .catch((err) => console.error("Ma'lumot olishda xatolik:", err)); // ✅ Xatoliklarni tekshirish
+      .catch((err) => {
+        alert("Hatolik" + err);
+      });
   }, []);
 
   if (!products) {

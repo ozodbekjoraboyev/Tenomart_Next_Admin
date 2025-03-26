@@ -10,10 +10,9 @@ function NavButton() {
     axios
       .get(
         `
-https://nt.softly.uz/api/public/categories`
+https://nt.softly.uz/api/front/categories`
       )
       .then((res) => {
-        // console.log(res.data);
         setTopKAtigorues(res.data);
       });
   }, []);
