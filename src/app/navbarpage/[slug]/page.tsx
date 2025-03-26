@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function NavbarPage() {
-  const [currentPage, setCurrentPage] = useState(1);
   const { id } = useParams();
   console.log(id);
 
