@@ -1,4 +1,7 @@
 "use client";
+import ProduktCard from "@/app/ProduktCard";
+import Cards from "@/companents/Cards";
+import BouncingLoader from "@/companents/Loading";
 import axios from "axios";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -33,7 +36,9 @@ function ProduktId() {
   }, [id]);
 
   if (!produktId) {
-    return <div className="text-center text-gray-500 py-10">Yuklanmoqda...</div>;
+    return (
+      <div className="text-center text-gray-500 py-10">    <BouncingLoader /></div>
+    );
   }
 
   return (
@@ -52,11 +57,21 @@ function ProduktId() {
 
         {/* Ma'lumotlar qismi */}
         <div className="w-full md:w-1/2">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{produktId.name}</h1>
-          <p className="text-gray-600 mt-2 text-sm md:text-base">{produktId.description}</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {produktId.name}
+          </h1>
+          <p className="text-gray-600 mt-2 text-sm md:text-base">
+            {produktId.description}
+          </p>
 
-          <p className="text-xl font-semibold text-green-600 mt-4">${produktId.price}</p>
-          <p className={`mt-2 ${produktId.stock > 0 ? "text-blue-500" : "text-red-500"}`}>
+          <p className="text-xl font-semibold text-green-600 mt-4">
+            ${produktId.price}
+          </p>
+          <p
+            className={`mt-2 ${
+              produktId.stock > 0 ? "text-blue-500" : "text-red-500"
+            }`}
+          >
             {produktId.stock > 0 ? "Sotuvda mavjud" : "Sotuvda yo‘q"}
           </p>
 
@@ -71,6 +86,7 @@ function ProduktId() {
           </div>
         </div>
       </div>
+      <Cards />
     </div>
   );
 }

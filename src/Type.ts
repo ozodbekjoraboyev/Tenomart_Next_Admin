@@ -24,3 +24,18 @@ export type BAnnerType = {
   createdAt: string;
 };
 
+export type CatigoriesProductIdTYpe = {
+  items: | [] | {
+        categoryId: number;
+        createdAt: string;
+        description: string;
+        id: number;
+        imageUrl: string;
+        name: string;
+        price: string;
+        stock: number;
+      }[];
+  limit: number;
+  page: number;
+  totalItems: number;
+};
